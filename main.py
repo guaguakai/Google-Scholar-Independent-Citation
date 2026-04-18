@@ -125,6 +125,7 @@ def main():
                         citing_results.append({"title": t, "authors": a})
                     except: continue
 
+                print(f"Processing: {paper_clean_name} | Page {page_num}")
                 page_data, p_ind, p_dep = highlight_page(driver, paper["authors"], citing_results)
                 paper_ind += p_ind; paper_dep += p_dep
                 
@@ -142,6 +143,9 @@ def main():
             if page_num > 0:
                 final_path = os.path.join(OUTPUT_DIR, f"{paper_clean_name}_Citations.pdf")
                 paper_merger.save(final_path)
+                print(f"--- PAPER FINISHED ---")
+                print(f"Independent: {paper_ind} | Dependent: {paper_dep}")
+                print(f"Saved: {final_path}\n")
                 total_ind += paper_ind; total_dep += paper_dep
             paper_merger.close()
 

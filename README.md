@@ -12,6 +12,18 @@ An automated tool designed for academics responding to **USCIS Green Card RFEs**
 
 ---
 
+## Example Output
+The script generates a consolidated PDF for each of your publications. Independent citations are automatically identified and marked to make the evidence clear for USCIS officers.
+
+### Visual Guide:
+* **Yellow Highlight**: Applied to the title of the citing paper.
+* **Red Label**: An "INDEPENDENT" tag is placed above the highlighted title.
+* **Header/Footer**: Includes the original Google Scholar URL and the date the evidence was retrieved.
+
+> **View Example File**: [Download Example Citation PDF](./example_output.pdf) 
+
+---
+
 ## Setup Instructions
 
 ### 1. Identify your Google Scholar ID
@@ -29,15 +41,8 @@ export SCHOLAR_ID="your_id_here"
 
 ### 3. Installation
 ```
-pip install selenium webdriver-manager pymupdf
+pip install -r requirements.txt
 ```
-
-### Configuration
-
-If you prefer not to use environment variables, you can manually update the configuration block at the top of main.py:
-
-* SCHOLAR_ID: Paste your 12-character ID.
-* EXCLUSION_LIST: Add your name variants (e.g., "J. Doe", "John Doe") and the names of frequent collaborators to ensure the "Independent" count is accurate.
 
 ### Usage
 
