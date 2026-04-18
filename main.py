@@ -13,11 +13,13 @@ from webdriver_manager.chrome import ChromeDriverManager
 # --- CONFIGURATION ---
 # Use an environment variable or manually input Scholar ID
 SCHOLAR_ID = os.getenv("SCHOLAR_ID", "YOUR_SCHOLAR_ID_HERE") 
+if SCHOLAR_ID == None:
+    SCHOLAR_ID = "spWVns8AAAAJ" # Replace with your actual Scholar ID or set as environment variable
 OUTPUT_DIR = os.path.abspath("Scholar_Citation_Evidence")
 
 # Add your name variants and known frequent co-authors here
 # This is critical for accurate "Independence" checking
-EXCLUSION_LIST = ["Your Name", "Y. Name", "Common Co-Author"]
+EXCLUSION_LIST = ["Kai Wang", "K. Wang", "Common Co-Author"]
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
